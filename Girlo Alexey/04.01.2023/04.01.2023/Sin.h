@@ -1,0 +1,1 @@
+long double numberSin(int numberC);

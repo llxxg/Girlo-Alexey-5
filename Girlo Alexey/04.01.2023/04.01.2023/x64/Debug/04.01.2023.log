@@ -1,0 +1,4 @@
+﻿  04.01.2023.cpp
+C:\Users\alexe\OneDrive\Рабочий стол\04.01.2023\04.01.2023\04.01.2023.cpp(38,27): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\alexe\OneDrive\Рабочий стол\04.01.2023\04.01.2023\04.01.2023.cpp(39,24): warning C4305: инициализация: усечение из "double" в "float"
+  04.01.2023.vcxproj -> C:\Users\alexe\OneDrive\Рабочий стол\04.01.2023\x64\Debug\04.01.2023.exe
