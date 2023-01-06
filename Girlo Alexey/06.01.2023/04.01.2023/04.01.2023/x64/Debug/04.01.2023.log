@@ -1,0 +1,5 @@
+﻿  04.01.2023.cpp
+C:\Users\alexe\OneDrive\Рабочий стол\04.01.2023\04.01.2023\04.01.2023.cpp(42,27): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\alexe\OneDrive\Рабочий стол\04.01.2023\04.01.2023\04.01.2023.cpp(43,24): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\alexe\OneDrive\Рабочий стол\04.01.2023\04.01.2023\04.01.2023.cpp(146,29): warning C4244: аргумент: преобразование "long double" в "const __int64", возможна потеря данных
+  04.01.2023.vcxproj -> C:\Users\alexe\OneDrive\Рабочий стол\04.01.2023\x64\Debug\04.01.2023.exe
