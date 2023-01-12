@@ -1,13 +1,173 @@
 ﻿#include <iostream>
-#include <cmath>
-#include <numeric> 
-#include <array>
-#include <algorithm>
-
-#include <iostream>
+#include <fstream>
 #include <conio.h>
+#include <stdlib.h>
+#include <dos.h>
+#include <iomanip>
+#include <string>
 
 using namespace std;
+class customer
+{
+private:
+public:
+    string customername;
+    string carmodel;
+    string carnumber;
+    char data;
+
+};
+class rent : public customer
+{
+public:
+    int days = 0, rentalfee = 0;
+    void data()
+    {
+        setlocale(LC_ALL, "Ru-ru");
+        int login();
+        login();
+        int uun;
+        cout << "Введите свое имя: ";
+        cin >> customername;
+        cout << endl;
+        do
+        {
+            cout << "Выберете авто" << endl;
+            cout << "Hyundai Sonata" << endl;
+            cout << "BMW X5m" << endl;
+            cout << "Toyota Yaris" << endl;
+            cout << endl;
+            cout << "Выберите автомобиль из вышеперечисленных вариантов: ";
+            cin >> carmodel;
+            cout << endl;
+            cout << "--------------------------------------------------------------------------" << endl;
+            if (carmodel == "1")
+            {
+                system("CLS");
+
+                cout << "Hyundai Sonata" << endl;
+                cout << "Цвет: Orange" << endl;
+                cout << "Максимальная скорость: 210 Km/h" << endl;
+
+
+            }
+            if (carmodel == "2")
+            {
+                system("CLS");
+
+                cout << "BMW X5m" << endl;
+                cout << "Цвет: satin black" << endl;
+                cout << "Максимальная скорость: 250 Km/h" << endl;
+
+
+
+            }
+            if (carmodel == "3")
+            {
+                system("CLS");
+
+                cout << "Toyota Yaris" << endl;
+                cout << "Цвет: Dark Blue (8W7)" << endl;
+                cout << "Максимальная скорость: 180 Km/h" << endl;
+              
+            }
+            if (carmodel != "1" && carmodel != "2" && carmodel != "3")
+
+                cout << "Пожалуйста, попробуйте еще раз!" << endl;
+        } while (carmodel != "1" && carmodel != "2" && carmodel != "3");
+        cout << "--------------------------------------------------------------------------" << endl;
+        cout << "Предоставте свои личные данные: " << endl;
+        cout << "Введите свой ИИН : ";
+        cin >> uun;
+        cout << "Выберите номер автомобиля: ";
+        cin >> carnumber;
+        cout << "Количество дней, на которые вы хотите арендовать автомобиль: ";
+        cin >> days;
+        cout << endl;
+    }
+    void calculate()
+    {
+       
+        system("CLS");
+
+        if (carmodel == "1")
+            rentalfee = days * 56;
+        if (carmodel == "2")
+            rentalfee = days * 60;
+        if (carmodel == "3")
+            rentalfee = days * 75;
+    }
+    void showrent()
+    {
+        cout << "Car Rental" << endl;
+        cout << "" << endl;
+        cout << "| Customer Name:" << "-----------------|" << setw(10) << customername << " |" << endl;
+        cout << "| Car Model :" << "--------------------|" << setw(10) << carmodel << " |" << endl;
+        cout << "| Car Nomer. :" << "-------------------|" << setw(10) << carnumber << " |" << endl;
+        cout << "| Количество дней :" << "--------------|" << setw(10) << days << " |" << endl;
+        cout << "| Your Rental Amount is :" << "--------|" << setw(10) << rentalfee << " |" << endl;
+        cout << "| Caution Money :" << "----------------|" << setw(10) << "0" << " |" << endl;
+        cout << "| Advanced :" << "---------------------|" << setw(10) << "0" << " |" << endl;
+        cout << "________________________________________________________" << endl;
+        cout << "\n";
+        cout << "| Общая сумма аренды составляет:" << "-|" << setw(10) << rentalfee << " |" << endl;
+        cout << "________________________________________________________" << endl;
+        cout << " " << endl;
+        cout << "///////////////////////////////////////////////////////////" << endl;
+        cout << "Оплатите сумму до установленного срока" << endl;
+        cout << "///////////////////////////////////////////////////////////" << endl;
+        int f;
+        system("PAUSE");
+
+        system("CLS");
+
+        ifstream inf("thanks.txt");
+
+
+        char str[300];
+
+        while (inf) {
+            inf.getline(str, 300);
+            if (inf) cout << str << endl;
+        }
+        inf.close();
+    }
+};
+class welcome {
+    ;
+public:
+    int welcum()
+    {
+        ifstream in("");
+
+        if (!in) {
+            cout << "Cannot open input file.\n";
+        }
+        char str[1000];
+        while (in) {
+            in.getline(str, 1000);
+            if (in) cout << str << endl;
+        }
+        in.close();
+        cout << "\nStarting the program please wait....." << endl;
+        cout << "\nloading up files....." << endl;
+        system("CLS");
+        return 0;
+    }
+
+};
+int main()
+{
+    welcome obj1;
+    obj1.welcum();
+    rent obj2;
+
+    obj2.data();
+    obj2.calculate();
+    obj2.showrent();
+
+    return 0; //end of the program
+}
 
 int login() {
 
@@ -39,156 +199,3 @@ int login() {
 
     return 0;
 }
-
-struct Cars {
-    
-
-    string mark[5] = { "Hyundai","BMW","Toyota","Audi","Tesla"};
-
-    string model[5] = { "Sonata","X5m","Yaris","E-tron GT","Model S Plaid"};
-
-    string color[5] = { "Orange","satin black","Dark Blue (8W7)","Tactical Green Metallic","Midnight Silver Metallic"};
-
-    string maxs_peed[5] = { "210 Km/h ","250 Km/h","180 Km/h","250 Km/h","322 Km/h"};
-
-    int price[5] = { 100,200,300,500,200};
-
-    int date[5] = { 2020,2021,2022,2023,2019};
-
-
-
-
-
-};
-
-struct Lessee {
-
-    string Name[5];
-    string Natio_ID[5];
-    int payment_acc[5];
-};
-
-
-Cars car;
-Lessee lessee;
-
-
-void Minu()
-{
-
-
-    int num = 1;
-    for (int i = 0; i < 5; ++i)
-    {
-        //cout << "---------------------" << endl;
-        cout << num << "-" << car.mark[i] << endl;
-        num++;
-    }
-
-}
-
-
-
-
-void Details(int theChoice)
-{
-    system("CLS");
-    cout << "---------------------" << endl;
-    cout << "Вы выбрали - " << car.mark[theChoice - 1] << endl;
-    cout << "---------------------" << endl;
-    cout << "Модель : " << car.model[theChoice - 1] << endl;
-    cout << "Цвет : " << car.color[theChoice - 1] << endl;
-
-    cout << "Максимальная скорость : " << car.maxs_peed[theChoice - 1] << endl;
-    cout << "Цена $ : " << car.price[theChoice - 1] << "K" << endl;
-
-
-}
-
-
-
-void check(int j)
-{
-    if (lessee.payment_acc[j] >= car.price[j])
-        cout << endl << "Аренда получена" << endl;
-    else
-        cout << endl << "Аренда не доступна" << endl;
-
-}
-
-void user_input(int theChoice)
-{
-    system("CLS");
-    int j = theChoice - 1;
-    cout << "---------------------" << endl;
-    cout << "Предоставте свои личные данные :" << endl;
-    cout << "---------------------" << endl;
-    cout << "Введите свое имя : ";
-    cin >> lessee.Name[j];
-    cout << "Введите свой ИИН : ";
-    cin >> lessee.Natio_ID[j];
-    cout << "Введите сумму платежа : ";
-    cin >> lessee.payment_acc[j];
-
-
-    check(j);
-}
-
-
-int main()
-{
-    setlocale(LC_ALL, "Ru-ru");
-    int login();
-    login();
-
-    string decide = "yes";
-
-    cout << "---------------------" << endl;
-    cout << "Аренда автомобилей" << endl;
-    cout << "Выберете машину из меню" << endl;
-    cout << "---------------------" << endl << endl;
-
-    while (decide != "Выход")
-    {
-        Minu();
-        cout << endl << "Вы выбрали: ";
-        int theChoice;
-        cin >> theChoice;
-        Details(theChoice);
-        cout << endl << "Вы хотите арендовать эту машину? ";
-        cin >> decide;
-
-        if (decide == "yes") {
-            user_input(theChoice);
-
-            cout << endl << "Вы хотите продолжить? ";
-            cin >> decide;
-
-
-            if (decide == "no") break;
-            system("CLS");
-        }
-
-
-        else {
-            if (decide == "no")
-            {
-                system("CLS");
-                continue;
-            }
-            else if (decide == "exit")
-            {
-                system("CLS");
-
-                break;
-            }
-
-
-
-        }
-    }
-
-
-    return 0;
-}
-

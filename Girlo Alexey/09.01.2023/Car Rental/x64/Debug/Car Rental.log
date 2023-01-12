@@ -1,2 +1,3 @@
 ﻿  Car Rental.cpp
-  Car Rental.vcxproj -> C:\Users\alexe\OneDrive\Рабочий стол\10.01.2023\x64\Debug\Car Rental.exe
+C:\Users\alexe\OneDrive\Рабочий стол\09.01.2023\Car Rental\Car Rental.cpp(130,13): warning C4101: f: неиспользованная локальная переменная
+  Car Rental.vcxproj -> C:\Users\alexe\OneDrive\Рабочий стол\09.01.2023\x64\Debug\Car Rental.exe
